@@ -1,0 +1,8 @@
+#!/bin/bash
+# 允许root登录
+echo "[SeatDefaults]" >> /etc/lightdm/lightdm.conf
+echo "allow-guest=false" >> /etc/lightdm/lightdm.conf
+echo "#autologin-user=root" >> /etc/lightdm/lightdm.conf
+echo "greeter-session=unity-greeter" >> /etc/lightdm/lightdm.conf
+echo "user-session=ubuntu" >> /etc/lightdm/lightdm.conf
+echo "greeter-show-manual-login=true" >> /etc/lightdm/lightdm.conf
