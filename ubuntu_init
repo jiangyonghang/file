@@ -1,0 +1,18 @@
+#!/bin/bash
+
+apt-get install vim libssl-dev subversion git openssh-server unity-tweak-tool fcitx-table-wubi build-essential cmake python-dev python3-dev autoconf libcurl4-openssl-dev valgrind 
+
+cd /x/
+git clone git@github.com:jiangyonghang/file 
+
+#profile出错
+sed 's/mesg n || true/tty -s && mesg n' /root/.profile -i
+sed 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config -i
+
+#字体
+mkdir /usr/share/fonts/truetype/yahei/ ;mkdir yahei; 
+cp /x/YaHei\ Consolas\ Hybrid.ttf ./
+mkfontscale
+mkfontdir
+fc-cache -fv
+
