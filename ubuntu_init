@@ -2,17 +2,34 @@
 
 apt-get install vim libssl-dev subversion git openssh-server unity-tweak-tool fcitx-table-wubi build-essential cmake python-dev python3-dev autoconf libcurl4-openssl-dev valgrind 
 
+#设置git 
+git config --global user.email "gotojyh@126.com"
+git config --global user.name "jiangyonghang"
+
+mkdir /x
 cd /x/
 git clone git@github.com:jiangyonghang/file 
 
 #profile出错
 sed 's/mesg n || true/tty -s && mesg n' /root/.profile -i
-sed 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config -i
+#sed 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config -i
 
 #字体
-mkdir /usr/share/fonts/truetype/yahei/ ;mkdir yahei; 
-cp /x/YaHei\ Consolas\ Hybrid.ttf ./
+mkdir /usr/share/fonts/truetype/yahei/  
+cd /usr/share/fonts/truetype/yahei/
+cp /x/file/YaHei\ Consolas\ Hybrid.ttf ./
 mkfontscale
 mkfontdir
 fc-cache -fv
 
+#允许root登录
+chmod +x permit_root
+./permit_root
+
+#设置五笔
+#设置gonme-terminal
+
+#backup
+#cd /y && ./push
+#cd /he/haier && ./push
+#cd /he
