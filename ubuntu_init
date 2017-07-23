@@ -33,6 +33,10 @@ cd /x/file/
 chmod +x permit_root
 ./permit_root
 
+#设置环境变量
+#/x/file/shell/
+#cp /y/shell/ve /usr/bin/
+
 #启动root后设置
 
 #下载QtCreator
